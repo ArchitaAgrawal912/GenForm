@@ -1,7 +1,7 @@
 # 🌟 GenForm AI 🌟
 
 **Simplify Form Creation with the Power of AI**  
-In the digital age, creating forms should be quick, smart, and intuitive. Enter **GenForm AI**, an AI-powered SaaS solution that automates form generation, helping you save time and focus on what truly matters—your data and insights. 🚀
+In the digital age, creating forms should be quick, smart, and intuitive. Enter **GenForm AI**, an AI-powered SaaS solution that automates form generation, helping you save time and focus on what truly matters—your data and insights. GenForm.AI is a generative AI SaaS platform for automatic form generation, powered by large language models (LLMs).🚀
 
 ---
 
