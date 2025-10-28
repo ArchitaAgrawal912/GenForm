@@ -6,6 +6,7 @@ import { revalidatePath } from "next/cache";
 
 type FormData = {
   formTitle: string;
+  formDescription?: string;
   formFields: Array<{
     id: string;
     label: string;
@@ -47,6 +48,7 @@ export const updateForm = async (formUuid: string, formData: FormData) => {
     // Remove the id field from formFields before saving
     const cleanedFormData = {
       formTitle: formData.formTitle,
+      formDescription: formData.formDescription,
       formFields: formData.formFields.map((field) => ({
         label: field.label,
         name: field.name,

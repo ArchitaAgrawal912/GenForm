@@ -8,6 +8,7 @@ import FormPublishDialog from "./FormPublishDialog";
 import { Fields } from "@/types/form";
 import toast from "react-hot-toast";
 import { submitForm } from "../actions/submitForm";
+import RichTextEditor from "./RichTextEditor";
 
 type Props = { form: any; isEditMode: boolean };
 
@@ -52,6 +53,14 @@ const AiGeneratedForm: React.FC<Props> = ({ form, isEditMode }) => {
   return (
     <div>
       <form onSubmit={isEditMode ? handlePublish : handleSubmit}>
+        {value.formDescription && (
+          <div className="mb-6">
+            <RichTextEditor
+              value={value.formDescription}
+              readOnly
+            />
+          </div>
+        )}
         {data.map((item: Fields, index: number) => (
           <div key={index} className="mb-4">
             <Label>{item.label}</Label>

@@ -8,9 +8,11 @@ import FormPublishButton from "./FormPublishButton";
 import { Button } from "./ui/button";
 import { ArrowLeft, Pencil, Check, X } from "lucide-react";
 import { Input } from "./ui/input";
+import RichTextEditor from "./RichTextEditor";
 
 type FormData = {
   formTitle: string;
+  formDescription?: string;
   formFields: Array<{
     id: string;
     label: string;
@@ -29,16 +31,22 @@ type Props = {
 const FormEditorWrapper: React.FC<Props> = ({ form }) => {
   const router = useRouter();
   const [isEditingTitle, setIsEditingTitle] = useState(false);
-  const [formTitle, setFormTitle] = useState(
-    typeof form.content === 'string' 
-      ? JSON.parse(form.content).formTitle 
-      : form.content.formTitle
-  );
+  const [isEditingDescription, setIsEditingDescription] = useState(false);
+  
+  const parsedContent = typeof form.content === 'string' 
+    ? JSON.parse(form.content) 
+    : form.content;
+  
+  const [formTitle, setFormTitle] = useState(parsedContent.formTitle);
+  const [formDescription, setFormDescription] = useState(parsedContent.formDescription || '');
   const [isSaving, setIsSaving] = useState(false);
 
   const handleSave = async (formData: FormData) => {
     try {
-      const result = await updateForm(form.uuid, formData);
+      const result = await updateForm(form.uuid, {
+        ...formData,
+        formDescription: formDescription
+      });
       
       if (result.success) {
         toast.success(result.message);
@@ -66,6 +74,7 @@ const FormEditorWrapper: React.FC<Props> = ({ form }) => {
 
       const result = await updateForm(form.uuid, {
         formTitle: formTitle,
+        formDescription: formDescription,
         formFields: (content.formFields || []).map((field: any) => ({
           id: field.name || field.id || '',
           label: field.label || '',
@@ -98,6 +107,50 @@ const FormEditorWrapper: React.FC<Props> = ({ form }) => {
       : form.content.formTitle;
     setFormTitle(originalTitle);
     setIsEditingTitle(false);
+  };
+
+  const saveFormDescription = async () => {
+    setIsSaving(true);
+    try {
+      const content = typeof form.content === 'string' 
+        ? JSON.parse(form.content) 
+        : form.content;
+
+      const result = await updateForm(form.uuid, {
+        formTitle: formTitle,
+        formDescription: formDescription,
+        formFields: (content.formFields || []).map((field: any) => ({
+          id: field.name || field.id || '',
+          label: field.label || '',
+          name: field.name || '',
+          type: field.type || 'text',
+          placeholder: field.placeholder || '',
+          options: field.options || [],
+          required: field.required !== undefined ? field.required : true
+        }))
+      });
+
+      if (result.success) {
+        toast.success("Form description updated");
+        setIsEditingDescription(false);
+        router.refresh();
+      } else {
+        toast.error(result.message);
+      }
+    } catch (err) {
+      console.error("Error updating form description:", err);
+      toast.error("Failed to update description");
+    } finally {
+      setIsSaving(false);
+    }
+  };
+
+  const cancelDescriptionEdit = () => {
+    const originalDescription = typeof form.content === 'string' 
+      ? JSON.parse(form.content).formDescription 
+      : form.content.formDescription;
+    setFormDescription(originalDescription || '');
+    setIsEditingDescription(false);
   };
 
   return (
@@ -161,6 +214,66 @@ const FormEditorWrapper: React.FC<Props> = ({ form }) => {
             </Button>
           </div>
         )}
+        
+        {/* Description Editor */}
+        {isEditingDescription ? (
+          <div className="mb-4">
+            <RichTextEditor
+              value={formDescription}
+              onChange={setFormDescription}
+              placeholder="Add a description for your form..."
+            />
+            <div className="flex items-center gap-2 mt-3">
+              <Button 
+                size="sm" 
+                onClick={saveFormDescription}
+                disabled={isSaving}
+              >
+                <Check className="h-4 w-4 mr-1" />
+                Save Description
+              </Button>
+              <Button 
+                size="sm" 
+                variant="outline"
+                onClick={cancelDescriptionEdit}
+                disabled={isSaving}
+              >
+                <X className="h-4 w-4 mr-1" />
+                Cancel
+              </Button>
+            </div>
+          </div>
+        ) : (
+          <div className="mb-4 group">
+            {formDescription ? (
+              <div className="flex items-start gap-3">
+                <RichTextEditor
+                  value={formDescription}
+                  readOnly
+                />
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => setIsEditingDescription(true)}
+                  className="opacity-0 group-hover:opacity-100 transition-opacity mt-2"
+                >
+                  <Pencil className="h-4 w-4" />
+                </Button>
+              </div>
+            ) : (
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => setIsEditingDescription(true)}
+                className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
+              >
+                <Pencil className="h-4 w-4 mr-2" />
+                Add description
+              </Button>
+            )}
+          </div>
+        )}
+        
         <p className="text-gray-600 dark:text-gray-400 mt-2">
           Customize your form by adding, editing, or removing fields. Once ready, publish and share your form!
         </p>

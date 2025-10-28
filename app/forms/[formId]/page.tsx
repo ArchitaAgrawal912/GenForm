@@ -14,11 +14,16 @@ const SubmitForm = async ({ params }: { params: Promise<{ formId: string }> }) =
       uuid: formId,
     },
   });
+
+  const parsedContent = typeof form.content === 'string' 
+    ? JSON.parse(form.content) 
+    : form.content;
+
   return (
     <Card className='max-w-xl mx-auto py-10'>
     <CardHeader>
       <CardTitle>
-        <h1 className="font-bold text-2xl text-center">{form.content.formTitle || "NA" }</h1>
+        <h1 className="font-bold text-2xl text-center">{parsedContent.formTitle || "NA" }</h1>
       </CardTitle>
     </CardHeader>
     <CardContent>

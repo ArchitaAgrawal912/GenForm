@@ -9,6 +9,7 @@ export type Fields = {
 }
 export type Content = { 
     formTitle:string;
+    formDescription?:string;
     formFields:Fields[]
 }
 export type Form = {
