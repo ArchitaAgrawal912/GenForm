@@ -41,15 +41,14 @@ export const generateForm = async (prevState: unknown, formData: FormData) => {
     const genAI = new GoogleGenerativeAI(GEMINI_API_KEY);
 
     const model = genAI.getGenerativeModel({
-      model: "gemini-2.0-flash-exp", // Use the correct Gemini model
+      model: "gemini-2.0-flash",
     });
 
     const generationConfig = {
-      temperature: 1,
+      temperature: 0.7,
       topP: 0.95,
       topK: 40,
-      maxOutputTokens: 8192,
-      responseMimeType: "application/json",
+      maxOutputTokens: 2048,
     };
 
     // Start a chat session and send the prompt
@@ -91,7 +90,14 @@ Requirements:
 - Make field names lowercase and use underscores (e.g., "first_name", "email_address").`;
 
     const result = await chatSession.sendMessage(`${description} ${prompt}`);
-    const formContent = result.response.text(); // Parse response content
+    const responseText = result.response.text();
+    
+    // Extract JSON from response (gemini-pro might wrap it in markdown)
+    let formContent = responseText;
+    const jsonMatch = responseText.match(/\{[\s\S]*\}/);
+    if (jsonMatch) {
+      formContent = jsonMatch[0];
+    }
 
     if (!formContent) {
       return { success: false, message: "No form content generated" };
