@@ -7,12 +7,12 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative w-full overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50 to-green-50 dark:from-gray-950 dark:via-blue-950/30 dark:to-green-950/30">
+    <footer className="relative w-full overflow-hidden bg-white dark:bg-gray-950">
       {/* Animated Background Pattern */}
       <div className="absolute inset-0 overflow-hidden opacity-40">
-        <div className="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-green-400 to-blue-500 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-tr from-blue-400 to-cyan-500 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gradient-to-r from-green-300 to-emerald-400 rounded-full blur-3xl animate-pulse delay-500"></div>
+        <div className="absolute -top-40 -right-40 w-96 h-96 bg-green-500/10 dark:bg-green-500/5 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-emerald-500/10 dark:bg-emerald-500/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-teal-500/10 dark:bg-teal-500/5 rounded-full blur-3xl animate-pulse delay-500"></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -22,17 +22,17 @@ const Footer = () => {
           {/* Brand Section - Larger on desktop */}
           <div className="lg:col-span-5 flex flex-col items-center lg:items-start gap-6">
             <div className="relative group">
-              <div className="absolute -inset-1 bg-gradient-to-r from-green-600 via-blue-600 to-cyan-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-300"></div>
+              <div className="absolute -inset-1 bg-green-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-300"></div>
               <div className="relative flex items-center gap-3 bg-white dark:bg-gray-900 px-6 py-4 rounded-2xl">
                 <div className="relative">
-                  <div className="absolute inset-0 bg-gradient-to-br from-green-500 to-blue-600 rounded-xl blur-md opacity-50"></div>
+                  <div className="absolute inset-0 bg-green-500 rounded-xl blur-md opacity-50"></div>
                   <div className="relative w-12 h-12  rounded-xl flex items-center justify-center shadow-lg">
                     <span className="text-white font-bold text-2xl">
                       <Image src="/genform.png" alt="GenForm Logo" width={48} height={48} priority /> 
                     </span>
                   </div>
                 </div>
-                <h3 className="text-3xl font-black bg-gradient-to-r from-green-600 via-blue-600 to-cyan-600 bg-clip-text text-transparent">
+                <h3 className="text-3xl font-black text-green-500 dark:text-green-400">
                   GenForm
                 </h3>
               </div>
@@ -57,16 +57,16 @@ const Footer = () => {
           {/* Quick Links */}
           <div className="lg:col-span-3 flex flex-col items-center lg:items-start gap-5">
             <h4 className="text-sm font-bold text-gray-900 dark:text-white uppercase tracking-widest flex items-center gap-2">
-              <div className="w-8 h-0.5 bg-gradient-to-r from-green-500 to-blue-500"></div>
+              <div className="w-8 h-0.5 bg-green-500"></div>
               Navigate
             </h4>
             <ul className="space-y-3 text-center lg:text-left">
               <li>
                 <Link 
                   href="/dashboard/forms" 
-                  className="group inline-flex items-center gap-2 text-base font-medium text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 transition-all hover:translate-x-2 cursor-pointer"
+                  className="group inline-flex items-center gap-2 text-base font-medium text-gray-700 dark:text-gray-300 hover:text-green-500 dark:hover:text-green-400 transition-all hover:translate-x-2 cursor-pointer"
                 >
-                  <span className="w-2 h-2 rounded-full bg-gradient-to-r from-green-400 to-blue-500 group-hover:shadow-lg group-hover:shadow-green-500/50 transition-all"></span>
+                  <span className="w-2 h-2 rounded-full bg-green-500 group-hover:shadow-lg group-hover:shadow-green-500/50 transition-all"></span>
                   Dashboard
                   <ArrowUpRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
@@ -76,7 +76,7 @@ const Footer = () => {
                   href="/dashboard/analytics" 
                   className="group inline-flex items-center gap-2 text-base font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all hover:translate-x-2 cursor-pointer"
                 >
-                  <span className="w-2 h-2 rounded-full bg-gradient-to-r from-blue-400 to-cyan-500 group-hover:shadow-lg group-hover:shadow-blue-500/50 transition-all"></span>
+                  <span className="w-2 h-2 rounded-full bg-emerald-500 group-hover:shadow-lg group-hover:shadow-emerald-500/50 transition-all"></span>
                   Analytics
                   <ArrowUpRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
@@ -86,7 +86,7 @@ const Footer = () => {
                   href="/dashboard/upgrade" 
                   className="group inline-flex items-center gap-2 text-base font-medium text-gray-700 dark:text-gray-300 hover:text-cyan-600 dark:hover:text-cyan-400 transition-all hover:translate-x-2 cursor-pointer"
                 >
-                  <span className="w-2 h-2 rounded-full bg-gradient-to-r from-cyan-400 to-green-500 group-hover:shadow-lg group-hover:shadow-cyan-500/50 transition-all"></span>
+                  <span className="w-2 h-2 rounded-full bg-teal-500 group-hover:shadow-lg group-hover:shadow-teal-500/50 transition-all"></span>
                   Pricing
                   <ArrowUpRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
@@ -96,9 +96,9 @@ const Footer = () => {
                   href="https://github.com/Amansingh0807/GenForm" 
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group inline-flex items-center gap-2 text-base font-medium text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-all hover:translate-x-2 cursor-pointer"
+                  className="group inline-flex items-center gap-2 text-base font-medium text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 transition-all hover:translate-x-2 cursor-pointer"
                 >
-                  <span className="w-2 h-2 rounded-full bg-gradient-to-r from-purple-400 to-pink-500 group-hover:shadow-lg group-hover:shadow-purple-500/50 transition-all"></span>
+                  <span className="w-2 h-2 rounded-full bg-green-500 group-hover:shadow-lg group-hover:shadow-green-500/50 transition-all"></span>
                   Repository
                   <ArrowUpRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </a>
@@ -109,7 +109,7 @@ const Footer = () => {
           {/* Connect Section */}
           <div className="lg:col-span-4 flex flex-col items-center lg:items-start gap-5">
             <h4 className="text-sm font-bold text-gray-900 dark:text-white uppercase tracking-widest flex items-center gap-2">
-              <div className="w-8 h-0.5 bg-gradient-to-r from-blue-500 to-green-500"></div>
+              <div className="w-8 h-0.5 bg-green-500"></div>
               Connect
             </h4>
             <div className="flex gap-4">
@@ -120,7 +120,7 @@ const Footer = () => {
                 aria-label="GitHub"
                 className="group relative"
               >
-                <div className="absolute -inset-2 bg-gradient-to-r from-gray-600 to-gray-900 rounded-2xl blur opacity-0 group-hover:opacity-30 transition duration-300"></div>
+                <div className="absolute -inset-2 bg-gray-600 rounded-2xl blur opacity-0 group-hover:opacity-30 transition duration-300"></div>
                 <div className="relative w-14 h-14 rounded-2xl bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 flex items-center justify-center hover:border-gray-900 dark:hover:border-gray-500 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 cursor-pointer">
                   <Github className="w-6 h-6 text-gray-700 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white transition-colors" />
                 </div>
@@ -132,7 +132,7 @@ const Footer = () => {
                 aria-label="LinkedIn"
                 className="group relative"
               >
-                <div className="absolute -inset-2 bg-gradient-to-r from-blue-400 to-blue-600 rounded-2xl blur opacity-0 group-hover:opacity-40 transition duration-300"></div>
+                <div className="absolute -inset-2 bg-blue-500 rounded-2xl blur opacity-0 group-hover:opacity-40 transition duration-300"></div>
                 <div className="relative w-14 h-14 rounded-2xl bg-white dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-900 flex items-center justify-center hover:border-[#0077b5] hover:bg-[#0077b5] hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/50 transition-all duration-300 cursor-pointer">
                   <Linkedin className="w-6 h-6 text-blue-600 group-hover:text-white transition-colors" />
                 </div>
@@ -144,7 +144,7 @@ const Footer = () => {
                 aria-label="X (Twitter)"
                 className="group relative"
               >
-                <div className="absolute -inset-2 bg-gradient-to-r from-gray-600 to-black rounded-2xl blur opacity-0 group-hover:opacity-30 transition duration-300"></div>
+                <div className="absolute -inset-2 bg-gray-800 rounded-2xl blur opacity-0 group-hover:opacity-30 transition duration-300"></div>
                 <div className="relative w-14 h-14 rounded-2xl bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 flex items-center justify-center hover:border-black hover:bg-black hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 cursor-pointer">
                   <Twitter className="w-6 h-6 text-gray-700 dark:text-gray-300 group-hover:text-white transition-colors" />
                 </div>
@@ -156,9 +156,9 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Divider with gradient */}
+        {/* Divider */}
         <div className="relative mb-8">
-          <div className="w-full h-px bg-gradient-to-r from-transparent via-green-500/50 to-transparent"></div>
+          <div className="w-full h-px bg-green-500/20"></div>
         </div>
 
         {/* Bottom Section */}
