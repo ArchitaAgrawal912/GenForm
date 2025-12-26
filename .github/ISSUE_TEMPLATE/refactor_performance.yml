@@ -1,0 +1,145 @@
+name: ⚡ Refactor / Performance
+description: Suggest code optimization or performance improvements for GenForm
+title: "[Performance]: "
+labels: ["performance", "refactor", "needs-triage"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for helping improve GenForm's code quality and performance! Let's make it faster and cleaner.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: A clear description of the performance issue or refactoring opportunity.
+      placeholder: Describe what needs optimization or refactoring...
+    validations:
+      required: true
+
+  - type: textarea
+    id: current-code
+    attributes:
+      label: Current Code Snippet / File Path
+      description: Provide the current code snippet or specify the file path that needs optimization.
+      placeholder: |
+        File: `app/components/FormEditor.tsx` (lines 45-60)
+        
+        ```tsx
+        // Current code here
+        ```
+        
+        Or just provide the file path if it's a large section.
+      render: typescript
+    validations:
+      required: true
+
+  - type: dropdown
+    id: optimization-type
+    attributes:
+      label: Type of Optimization
+      description: What kind of optimization is this?
+      options:
+        - Code Refactoring
+        - Performance Optimization
+        - Bundle Size Reduction
+        - Database Query Optimization
+        - Rendering Performance
+        - Memory Usage
+        - Load Time Improvement
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed-optimization
+    attributes:
+      label: Proposed Optimization
+      description: Describe your proposed solution or optimization approach.
+      placeholder: |
+        Suggested changes:
+        
+        ```tsx
+        // Optimized code here
+        ```
+        
+        Explanation:
+        - Use React.memo to prevent unnecessary re-renders
+        - Implement lazy loading for heavy components
+        - etc.
+      render: typescript
+    validations:
+      required: true
+
+  - type: textarea
+    id: performance-gain
+    attributes:
+      label: Expected Performance Gain
+      description: What performance improvements do you expect from this optimization?
+      placeholder: |
+        Expected benefits:
+        - Lighthouse Performance score: 75 → 90
+        - First Contentful Paint: 2.5s → 1.2s
+        - Bundle size reduction: -150KB
+        - Faster page load by ~40%
+        - Reduced re-renders by 60%
+    validations:
+      required: true
+
+  - type: textarea
+    id: metrics
+    attributes:
+      label: Current Performance Metrics (Optional)
+      description: If you have measured the current performance, share the metrics here.
+      placeholder: |
+        Current metrics:
+        - Lighthouse Score: 75
+        - Bundle Size: 500KB
+        - Load Time: 3.2s
+        - etc.
+    validations:
+      required: false
+
+  - type: textarea
+    id: impact-analysis
+    attributes:
+      label: Impact Analysis
+      description: What's the scope of this change? Will it affect other parts of the codebase?
+      placeholder: |
+        - Affects only the FormEditor component
+        - No breaking changes
+        - Requires testing in X, Y, Z scenarios
+    validations:
+      required: false
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      description: How critical is this optimization?
+      options:
+        - Low - Minor optimization
+        - Medium - Noticeable improvement
+        - High - Significant performance issue
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Any benchmarks, profiling data, or relevant links?
+      placeholder: Links to performance reports, profiler screenshots, etc.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: By submitting this issue, you agree to follow our Code of Conduct
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true
