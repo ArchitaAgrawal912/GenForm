@@ -31,11 +31,7 @@ GenForm proudly participates in **SWOC**, and we appreciate everyone who contrib
 🔹 **Archita Agrawal** — [@ArchitaAgrawal912](https://github.com/ArchitaAgrawal912)
 🔹 **Nitya Gattu** — [@NITYANIT](https://github.com/NITYANIT)
 
-> ℹ️ **Contributor Instructions**  
-> • Contributors do not have direct edit access  
-> • Please add your name **only after your PR is merged**  
-> • Follow the same format to keep the list clean
-
+Want to see your name here? Make a contribution and open a PR 🚀
 ---
 
 ## 🌟 Overview
