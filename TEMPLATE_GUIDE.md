@@ -8,17 +8,19 @@ Welcome to the GenForm Template Library! We're building a comprehensive collecti
 
 ### What You Need to Do
 
-**Add just ONE file!** That's it.
+**Add TWO things:**
 
-Create a new JSON file in the appropriate category folder:
-```
-templates/[Category]_Template/[number].json
-```
+1. **Your template JSON file:**
+   ```
+   templates/[Category]_Template/[number].json
+   ```
+
+2. **Import it in the index file:**
+   Add your template to `templates/index.ts`
 
 **Examples:**
-- `templates/Healthcare_Template/1.json`
-- `templates/Event_Template/1.json`
-- `templates/Restaurant_Template/2.json`
+- Add: `templates/Healthcare_Template/1.json`
+- Update: `templates/index.ts` (import and add to array)
 
 The system will automatically load your template and display it in the UI.
 
@@ -197,7 +199,27 @@ Choose an existing category or create a new one:
 - Follow the structure shown above
 - Validate your JSON using [JSONLint](https://jsonlint.com/)
 
-### Step 4: Test Locally (Optional)
+### Step 4: Update templates/index.ts
+
+**IMPORTANT:** Add your template to the index file so it gets included in the build.
+
+**Example:** If you created `templates/Healthcare_Template/1.json`
+
+Open `templates/index.ts` and add:
+
+```typescript
+// 1. Import your template at the top
+import healthcareTemplate from "@/templates/Healthcare_Template/1.json";
+
+// 2. Add it to the ALL_TEMPLATES array
+export const ALL_TEMPLATES: Template[] = [
+  jobTemplate as Template,
+  studentTemplate as Template,
+  healthcareTemplate as Template,  // <-- Add your template here
+];
+```
+
+### Step 5: Test Locally (Optional)
 
 ```bash
 npm run dev
@@ -205,7 +227,7 @@ npm run dev
 # Verify your template appears and works correctly
 ```
 
-### Step 5: Submit a Pull Request
+### Step 6: Submit a Pull Request
 
 - **Title Format**: `[Template] Add [Category] - [Template Name]`
 - **Description**: Briefly describe your template and its use case
