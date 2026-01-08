@@ -71,7 +71,7 @@ const layout = async ({ children }: { children: React.ReactNode }) => {
                 </Button>
               </SheetTrigger>
               <SheetContent>
-
+                 <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
                 <div className="flex flex-col gap-4 mt-8">
 
                   {/* Mobile Nav - Common Links */}
