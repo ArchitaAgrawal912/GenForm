@@ -4,6 +4,7 @@
 import jobTemplate from "@/templates/Job_Template/1.json";
 import studentTemplate from "@/templates/Student_Template/1.json";
 import orderTemplate from "@/templates/Order_Template/1.json";
+import contactUsTemplate from "@/templates/ContactUs_Template/1.json";
 import feedbackTemplate1 from "./Feedback_Template/1.json";
 
 
@@ -14,6 +15,8 @@ export const ALL_TEMPLATES: Template[] = [
   jobTemplate as Template,
   studentTemplate as Template,
   orderTemplate as Template,
+  contactUsTemplate as Template,
+
   feedbackTemplate1 as Template,
 ];
 
