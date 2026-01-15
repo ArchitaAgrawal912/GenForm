@@ -23,19 +23,19 @@ GenForm proudly participates in **SWOC**, and we appreciate everyone who contrib
 
 <!-- Add your name below once your PR is merged -->
 
-🔹 **Aman Singh** — [@Amansingh0807](https://github.com/Amansingh0807)
-🔹 **Kenneth Jerome Fernandes** — [@KennethJF23](http://github.com/KennethJF23)
-🔹 **Shihab Hasan** — [@shihabhasan0161](https://github.com/shihabhasan0161)
-🔹 **Prabuddha Narayan Datta** — [@prabuddhaxdev](https://github.com/prabuddhaxdev)
-🔹 **David Pratama** — [@daviddprtma](https://github.com/daviddprtma)
-🔹 **Archita Agrawal** — [@ArchitaAgrawal912](https://github.com/ArchitaAgrawal912)
-🔹 **Nitya Gattu** — [@NITYANIT](https://github.com/NITYANIT)
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/Amansingh0807"><img src="https://github.com/Amansingh0807.png" width="100px;" alt=""/><br /><sub><b>Aman Singh</b></sub></a></td>
+    <td align="center"><a href="https://github.com/KennethJF23"><img src="https://github.com/KennethJF23.png" width="100px;" alt=""/><br /><sub><b>Kenneth Jerome Fernandes</b></sub></a></td>
+    <td align="center"><a href="https://github.com/shihabhasan0161"><img src="https://github.com/shihabhasan0161.png" width="100px;" alt=""/><br /><sub><b>Shihab Hasan</b></sub></a></td>
+    <td align="center"><a href="https://github.com/prabuddhaxdev"><img src="https://github.com/prabuddhaxdev.png" width="100px;" alt=""/><br /><sub><b>Prabuddha Narayan Datta</b></sub></a></td>
+    <td align="center"><a href="https://github.com/daviddprtma"><img src="https://github.com/daviddprtma.png" width="100px;" alt=""/><br /><sub><b>David Pratama</b></sub></a></td>
+    <td align="center"><a href="https://github.com/ArchitaAgrawal912"><img src="https://github.com/ArchitaAgrawal912.png" width="100px;" alt=""/><br /><sub><b>Archita Agrawal</b></sub></a></td>
+    <td align="center"><a href="https://github.com/NITYANIT"><img src="https://github.com/NITYANIT.png" width="100px;" alt=""/><br /><sub><b>Nitya Gattu</b></sub></a></td>
+  </tr>
+</table>
 
-> ℹ️ **Contributor Instructions**  
-> • Contributors do not have direct edit access  
-> • Please add your name **only after your PR is merged**  
-> • Follow the same format to keep the list clean
-
+Want to see your name here? Make a contribution and open a PR 🚀
 ---
 
 ## 🌟 Overview
@@ -134,6 +134,38 @@ GenForm proudly participates in **SWOC**, and we appreciate everyone who contrib
 - **Package Manager** - npm
 - **Build Tool** - Turbopack
 - **Code Quality** - ESLint
+
+---
+## 📁 Project Structure
+Here’s a quick look at how the repository is organized:
+📁 
+├── .github/                # GitHub workflows & configs
+├── app/                    # Next.js App Router pages & layouts
+├── components/             # UI components
+├── hooks/                  # Custom React hooks
+├── lib/                    # Utility modules & helpers
+├── prisma/                 # Database schema & migrations
+├── public/                 # Public assets (images, etc.)
+├── types/                  # TypeScript type definitions
+├── .editorconfig           # Editor config rules
+├── .gitignore              # Git ignore rules
+├── .hintrc                 # Linter configuration
+├── .prettierrc             # Prettier config
+├── CODE_OF_CONDUCT.md      # Contributor guidelines
+├── CONTRIBUTING.md         # Contribution guide
+├── LEARN.md                # Learning doc / usage tips
+├── LICENSE                 # MIT License
+├── README.md               # Project overview & instructions
+├── SECURITY.md             # Security policy
+├── components.json         # Shadcn UI component config
+├── eslint.config.mjs       # ESLint config
+├── middleware.ts           # Next.js middleware
+├── next.config.ts          # Next.js config
+├── package.json            # Dependencies & scripts
+├── package-lock.json       # Locked dependencies
+├── postcss.config.mjs      # PostCSS config
+├── tailwind.config.ts      # Tailwind CSS config
+└── tsconfig.json           # TypeScript config
 
 ---
 
@@ -264,7 +296,7 @@ AI Output:
 
 ## 📸 Screenshots
 
-![GenForm Dashboard](https://github.com/Amansingh0807/GenForm/blob/master/public/Screenshot%202025-06-17%20154052.png)
+![GenForm Dashboard](public/Screenshot%202025-06-17%20154052.png)
 
 ---
 
