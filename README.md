@@ -137,8 +137,11 @@ Want to see your name here? Make a contribution and open a PR 🚀
 
 ---
 ## 📁 Project Structure
+
 Here’s a quick look at how the repository is organized:
-📁 
+
+```text
+📁 Project Structure
 ├── .github/                # GitHub workflows & configs
 ├── app/                    # Next.js App Router pages & layouts
 ├── components/             # UI components
