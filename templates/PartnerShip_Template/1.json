@@ -1,0 +1,112 @@
+{
+  "id": "partnership_inquiry_1",
+  "category": "Partnership",
+  "name": "Event Sponsorship & Partnership Inquiry",
+  "description": "A professional B2B template for organizations to manage sponsorship requests, tier selections, and marketing objectives.",
+  "content": {
+    "formTitle": "Sponsorship & Partnership Inquiry",
+    "formDescription": "Interested in partnering with us? Please fill out this form to help us understand your objectives and how we can work together.",
+    "formFields": [
+      {
+        "id": "partner-org-name",
+        "name": "organization_name",
+        "label": "Company / Organization Name",
+        "placeholder": "Enter official name",
+        "type": "text",
+        "required": true
+      },
+      {
+        "id": "partner-contact-name",
+        "name": "contact_person",
+        "label": "Contact Person Name",
+        "placeholder": "Full Name",
+        "type": "text",
+        "required": true
+      },
+      {
+        "id": "partner-contact-email",
+        "name": "contact_email",
+        "label": "Professional Email Address",
+        "placeholder": "email@company.com",
+        "type": "email",
+        "required": true
+      },
+      {
+        "id": "partner-org-industry",
+        "name": "industry_sector",
+        "label": "Industry Sector",
+        "placeholder": "Select industry",
+        "type": "select",
+        "options": ["Technology", "Finance", "Education", "Healthcare", "Manufacturing", "Other"],
+        "required": true
+      },
+      {
+        "id": "partner-sponsor-level",
+        "name": "sponsorship_tier",
+        "label": "Interested Sponsorship Tier",
+        "placeholder": "Select a tier",
+        "type": "select",
+        "options": ["Lead Sponsor", "Platinum", "Gold", "Silver", "In-Kind Partner"],
+        "required": true
+      },
+      {
+        "id": "partner-budget-range",
+        "name": "budget_estimate",
+        "label": "Estimated Budget / Contribution",
+        "placeholder": "Enter amount in local currency",
+        "type": "number",
+        "required": false
+      },
+      {
+        "id": "partner-event-target",
+        "name": "target_event",
+        "label": "Target Event / Initiative",
+        "placeholder": "Which specific event are you interested in?",
+        "type": "text",
+        "required": true
+      },
+      {
+        "id": "partner-marketing-goal",
+        "name": "marketing_objectives",
+        "label": "Marketing Objectives",
+        "placeholder": "e.g., Brand awareness, talent recruitment, lead generation...",
+        "type": "textarea",
+        "required": true
+      },
+      {
+        "id": "partner-past-collab",
+        "name": "previous_collaboration",
+        "label": "Previous Collaboration?",
+        "placeholder": "Have you worked with us before?",
+        "type": "select",
+        "options": ["Yes", "No"],
+        "required": false
+      },
+      {
+        "id": "partner-website-url",
+        "name": "company_website",
+        "label": "Company Website",
+        "placeholder": "https://www.example.com",
+        "type": "text",
+        "required": false
+      },
+      {
+        "id": "partner-preferred-contact",
+        "name": "contact_method",
+        "label": "Preferred Communication Mode",
+        "placeholder": "How should we reach you?",
+        "type": "select",
+        "options": ["Email", "Phone Call", "LinkedIn", "Virtual Meeting"],
+        "required": true
+      },
+      {
+        "id": "partner-add-notes",
+        "name": "additional_requirements",
+        "label": "Additional Notes",
+        "placeholder": "Any specific requests or questions?",
+        "type": "textarea",
+        "required": false
+      }
+    ]
+  }
+}
