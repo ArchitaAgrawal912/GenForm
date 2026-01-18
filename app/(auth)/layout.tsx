@@ -1,6 +1,7 @@
 "use client";
 
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
@@ -24,9 +25,9 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-br from-green-500 to-blue-600 rounded-xl blur-md opacity-50"></div>
             <div className="relative w-16 h-16 rounded-xl flex items-center justify-center shadow-lg">
-              <span className="text-white font-bold text-3xl">
+              <Link href='/' className="text-white font-bold text-3xl">
                 <Image src="/genform.png" alt="GenForm Logo" width={48} height={48} priority />
-              </span>
+              </Link>
             </div>
           </div>
           <h1 className="mt-4 text-3xl font-black bg-gradient-to-r from-green-600 via-blue-600 to-cyan-600 bg-clip-text text-transparent">
