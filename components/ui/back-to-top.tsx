@@ -49,7 +49,7 @@ export default function BackToTopButton() {
                                 className="fixed bottom-8 right-8 rounded-full shadow-lg hover:shadow-xl transition-shadow z-50"
                                 aria-label="Back to top"
                             >
-                                <ChevronUp className="h-6 w-6 animate-ping" />
+                                <ChevronUp className="h-6 w-6" />
                             </Button>
                         </TooltipTrigger>
                         <TooltipContent side="top" align="center">
